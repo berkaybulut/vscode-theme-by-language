@@ -5,7 +5,8 @@ export function createSetThemeForCurrentFileLanguageCommand() {
     const command = vscode.commands.registerCommand('theme-by-language.setThemeForCurrentFileLanguage', () => {
         const editor = vscode.window.activeTextEditor;
         if (editor) {
-            const languageId = editor.document.languageId;
+            var languageId = editor.document.fileName;
+            languageId = languageId.split('.').pop();
             const currentTheme = getWorkbenchTheme();
 
             vscode.window.showQuickPick(listThemes(), {
