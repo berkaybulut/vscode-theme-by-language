@@ -74,7 +74,9 @@ export function applyTheme(theme: string) {
 export function applyCurrentEditorTheme() {
     const editor = vscode.window.activeTextEditor;
     if (editor) {
-        return applyLanguageTheme(editor.document.languageId);
+        var languageId = editor.document.fileName;
+        languageId = languageId.split('.').pop();
+        return applyLanguageTheme(languageId);
     } else {
         return applyDefaultTheme();
     }
