@@ -1,4 +1,4 @@
-# Theme by language
+# Theme by language & filetype
 
 Themes are great but sometimes some are better than others for a certain language.
 
